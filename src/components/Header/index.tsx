@@ -10,15 +10,26 @@ export default function Header() {
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutIndustriesRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutAboutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutProductsRef = useRef<NodeJS.Timeout | null>(null);
+  // Product links for dropdown
+  const productLinks = [
+    { name: 'AllRentals', href: 'https://allrentals.app' },
+    { name: 'KloudSales', href: 'https://KloudSales.com' },
+    { name: 'Wasenda', href: 'https://Wasenda.com' },
+    { name: 'Frappe', href: 'https://frappe.io/products' },
+  ];
 
   const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Products', href: '#' },
     { label: 'Services', href: '#' },
-    { label: 'Technologies', href: '#' },
     { label: 'Industries', href: '#' },
     { label: 'About', href: '#' },
     { label: 'Our Work', href: '#' },
@@ -27,7 +38,7 @@ export default function Header() {
 
   const aboutCol1 = [
     { name: 'Our Leadership Team', href: '#' },
-    { name: 'Our Tech Talent', href: '#' },
+    { name: 'Engineering Careers', href: '/join-us' },
     { name: 'Press Releases', href: '#' },
     { name: 'Contact Us', href: '/contact-us' },
     { name: 'FAQs', href: '/faq', highlighted: true },
@@ -41,7 +52,7 @@ export default function Header() {
   const aboutCol3 = [
     { name: 'Working at KompasIT', href: '/join-us' },
     { name: 'Job Opportunities', href: '#' },
-    { name: 'Talent Referrals', href: '#' },
+    { name: 'Partner Programs', href: '#' },
     { name: 'Our Circles Program', href: '#' },
     { name: 'Company Culture', href: '/company-culture', highlighted: true },
   ];
@@ -58,7 +69,7 @@ export default function Header() {
   ];
 
   const softwareServices = [
-    { name: 'Android App Development', href: '#' },
+    { name: 'Android App Development', href: '/solutions/android', highlighted: true },
     { name: 'Business Intelligence', href: '/solutions/business-intelligence', highlighted: true },
     { name: 'Data Engineering', href: '#' },
     { name: 'eCommerce Development', href: '#', highlighted: true },
@@ -119,8 +130,19 @@ export default function Header() {
   };
 
   const handleIndustriesMouseEnter = () => {
+    // existing code unchanged
     if (timeoutIndustriesRef.current) clearTimeout(timeoutIndustriesRef.current);
     setIsIndustriesOpen(true);
+  };
+
+  const handleProductsMouseEnter = () => {
+    if (timeoutProductsRef.current) clearTimeout(timeoutProductsRef.current);
+    setIsProductsOpen(true);
+  };
+  const handleProductsMouseLeave = () => {
+    timeoutProductsRef.current = setTimeout(() => {
+      setIsProductsOpen(false);
+    }, 200);
   };
 
   const handleIndustriesMouseLeave = () => {
@@ -152,7 +174,7 @@ export default function Header() {
                 <rect x="0" y="0" width="10.5" height="10.5" fill="#f25022" />
                 <rect x="12" y="0" width="10.5" height="10.5" fill="#7fba00" />
                 <rect x="0" y="12" width="10.5" height="10.5" fill="#00a4ef" />
-                <rect x="12" y="12" width="10.5" height="10.5" fill="#ffb900" />
+                <rect x="12" y="12" width="10.5" height="10.5" fill="#ffffff" />
               </svg>
             </div>
             <span className="text-xl font-semibold text-gray-900 tracking-tight select-none">
@@ -219,6 +241,35 @@ export default function Header() {
                     </button>
                     {/* Orange style bottom border when Industries Mega Menu is open */}
                     <span className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-200 ${isIndustriesOpen ? 'w-full' : 'w-0'}`}></span>
+                  </div>
+                );
+              }
+
+              if (item.label === 'Products') {
+                return (
+                  <div
+                    key={item.label}
+                    className="relative group h-full flex items-center"
+                    onMouseEnter={handleProductsMouseEnter}
+                    onMouseLeave={handleProductsMouseLeave}
+                  >
+                    <button
+                      className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
+                        isProductsOpen ? 'text-[#0078d4]' : 'text-gray-600 hover:text-[#0078d4]'
+                      }`}
+                    >
+                      {item.label}
+                      <svg
+                        className={`w-3.5 h-3.5 transition-transform duration-255 ${isProductsOpen ? 'rotate-180 text-[#0078d4]' : 'text-gray-400'}`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </button>
+                    <span className={`absolute bottom-0 left-0 h-0.5 bg-[#0078d4] transition-all duration-200 ${isProductsOpen ? 'w-full' : 'w-0'}`}></span>
                   </div>
                 );
               }
@@ -524,6 +575,56 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Products Mega Menu Dropdown */}
+      <div
+        className={`absolute left-0 right-0 top-full w-full bg-white border-b border-gray-150 shadow-xl transition-all duration-200 ease-out z-40 ${
+          isProductsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+        onMouseEnter={handleProductsMouseEnter}
+        onMouseLeave={handleProductsMouseLeave}
+      >
+        <div className="container mx-auto px-6 py-10 max-w-7xl">
+          <div className="grid grid-cols-12 gap-8">
+
+            {/* Left Column */}
+            <div className="col-span-3 border-r border-gray-100 pr-8">
+              <h3 className="text-xl font-bold text-gray-950 mb-2">Our Products</h3>
+              <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+                Explore our suite of purpose-built software products powering businesses across Africa and beyond.
+              </p>
+            </div>
+
+            {/* Right Column: Product Links */}
+            <div className="col-span-9 pl-4 flex items-start">
+              <div className="grid grid-cols-2 gap-6 w-full">
+                {productLinks.map((p) => (
+                  <Link
+                    key={p.name}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-4 rounded-lg border border-gray-100 hover:border-[#0078d4] hover:bg-blue-50 transition-all duration-200 group"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-[#0078d4]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0078d4]/20 transition-colors">
+                      <svg className="w-4 h-4 text-[#0078d4]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="text-[15px] font-semibold text-gray-800 group-hover:text-[#0078d4] transition-colors block">
+                        {p.name}
+                      </span>
+                      <span className="text-[12px] text-gray-400">{p.href.replace('https://', '')}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       {/* About Mega Menu Dropdown */}
       <div
         className={`absolute left-0 right-0 top-full w-full bg-white border-b border-gray-150 shadow-xl transition-all duration-205 ease-out z-40 ${
@@ -778,6 +879,48 @@ export default function Header() {
               );
             }
 
+            if (item.label === 'Products') {
+              return (
+                <div key={item.label} className="w-full">
+                  <button
+                    onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                    className="w-full flex items-center justify-between text-gray-600 hover:text-[#0078d4] font-semibold transition-colors py-2 text-lg cursor-pointer"
+                  >
+                    <span>{item.label}</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform duration-200 ${isMobileProductsOpen ? 'rotate-180 text-[#0078d4]' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+
+                  {/* Mobile Products Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out pl-4 flex flex-col space-y-4 ${
+                      isMobileProductsOpen ? 'max-h-[1200px] opacity-100 py-3' : 'max-h-0 opacity-0 py-0'
+                    }`}
+                  >
+                    {productLinks.map((p) => (
+                      <Link
+                        key={p.name}
+                        href={p.href}
+                        onClick={() => {
+                          setIsMobileProductsOpen(false);
+                          setIsOpen(false);
+                        }}
+                        className="text-sm flex items-center gap-1.5"
+                      >
+                        {p.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
             return (
               <Link
                 key={item.label}

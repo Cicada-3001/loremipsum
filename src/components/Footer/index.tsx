@@ -30,7 +30,7 @@ const resourceLinks = [
 
 const careerLinks = [
   { label: 'Job Opportunities', href: '#' },
-  { label: 'Talent Referrals', href: '#' },
+  { label: 'Partner Programs', href: '#' },
   { label: 'Associate Program', href: '#' },
 ];
 

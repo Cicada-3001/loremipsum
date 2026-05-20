@@ -4,13 +4,20 @@ import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
   const phrases = [
-    "We sell trust.",
-    "Your data is safe with us.",
-    "Your ideal growth partner."
+    "custom software products.",
+    "enterprise cloud platforms.",
+    "next-gen AI solutions."
   ];
 
   const [currentPhraseIdx, setCurrentPhraseIdx] = useState(0);
   const [fade, setFade] = useState(true);
+
+  const images = [
+    '/hero-bg.png',
+    '/kenyan-devs.png',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600'
+  ];
+  const [currentImgIdx, setCurrentImgIdx] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,24 +30,36 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [phrases.length]);
 
+  // Image rotation loop
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImgIdx((prev) => (prev + 1) % images.length);
+    }, 6000);
+    return () => clearInterval(imageInterval);
+  }, [images.length]);
+
   return (
     <>
       {/* Hero Content Section with Tech-Workspace Backdrop */}
-      <section 
-        className="relative overflow-hidden pt-36 pb-28 md:pt-48 md:pb-40 flex items-center justify-center min-h-[85vh] lg:min-h-[90vh]"
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(255,255,255,1) 35%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.3) 100%), url('/hero-bg.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'right center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+      <section className="relative overflow-hidden pt-36 pb-28 md:pt-48 md:pb-40 flex items-center justify-center min-h-[85vh] lg:min-h-[90vh]">
+        {/* Fading Background Carousel */}
+        {images.map((img, idx) => (
+          <div
+            key={img}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-no-repeat bg-[position:right_center] ${
+              idx === currentImgIdx ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'
+            }`}
+            style={{
+              backgroundImage: `linear-gradient(to right, rgba(255,255,255,1) 35%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.3) 100%), url('${img}')`,
+            }}
+          />
+        ))}
         <div className="max-w-7xl mx-auto w-full px-6 md:px-8 relative z-10 text-left">
           <div className="max-w-3xl">
             
             {/* Main heading with dynamic, non-shifting text rotator */}
             <h1 className="text-4xl md:text-5xl lg:text-[62px] font-extrabold text-gray-900 mb-6 leading-tight tracking-tight min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex flex-col justify-start">
-              <span className="block mb-2 select-none">We don't sell tech solutions</span>
+              <span className="block mb-2 select-none">We engineer</span>
               <span 
                 className={`inline-block transition-all duration-300 transform text-[#ea580c] bg-gradient-to-r from-[#ea580c] to-[#ff7825] bg-clip-text text-transparent ${
                   fade ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
@@ -52,7 +71,7 @@ export default function HeroSection() {
             
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl leading-relaxed">
-              Access 4,000+ timezone-aligned software engineers with experience in AI and 100+ other technologies.
+              We build custom applications, high-performance web systems, and robust enterprise platforms designed to accelerate your growth and scale operations.
             </p>
             
             {/* CTA Buttons */}

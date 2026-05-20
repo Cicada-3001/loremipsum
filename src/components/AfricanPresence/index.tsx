@@ -31,7 +31,7 @@ export default function AfricanPresence() {
       name: 'Kenya',
       flag: '🇰🇪',
       capital: 'Nairobi Hub',
-      engineers: '180+ Vetted Engineers',
+      engineers: '180+ Active Engineers',
       specialization: 'React, Node.js, AI Coding, Cloud Solutions',
       color: '#00a4ef', // Microsoft Blue
       textColor: 'text-[#0078d4]',
@@ -45,7 +45,7 @@ export default function AfricanPresence() {
       name: 'Nigeria',
       flag: '🇳🇬',
       capital: 'Lagos Hub',
-      engineers: '250+ Vetted Engineers',
+      engineers: '250+ Active Engineers',
       specialization: 'Python, Django, C# .NET Core, Backend Infrastructure',
       color: '#f25022', // Microsoft Orange/Red
       textColor: 'text-[#ea580c]',
@@ -59,7 +59,7 @@ export default function AfricanPresence() {
       name: 'Uganda',
       flag: '🇺🇬',
       capital: 'Kampala Hub',
-      engineers: '90+ Vetted Engineers',
+      engineers: '90+ Active Engineers',
       specialization: 'Mobile App Swift, Kotlin, Flutter, Cross-Platform',
       color: '#ffb900', // Microsoft Gold
       textColor: 'text-amber-600',
@@ -73,7 +73,7 @@ export default function AfricanPresence() {
       name: 'Ethiopia',
       flag: '🇪🇹',
       capital: 'Addis Ababa Hub',
-      engineers: '110+ Vetted Engineers',
+      engineers: '110+ Active Engineers',
       specialization: 'Java, Spring Boot, Big Data, SQL Systems',
       color: '#7fba00', // Microsoft Green
       textColor: 'text-green-600',
@@ -87,7 +87,7 @@ export default function AfricanPresence() {
       name: 'Rwanda',
       flag: '🇷🇼',
       capital: 'Kigali Hub',
-      engineers: '65+ Vetted Engineers',
+      engineers: '65+ Active Engineers',
       specialization: 'AI Automation, Machine Learning Models, Analytics',
       color: '#8b5cf6', // Purple
       textColor: 'text-purple-600',
@@ -101,28 +101,28 @@ export default function AfricanPresence() {
       name: 'Tanzania',
       flag: '🇹🇿',
       capital: 'Dar es Salaam Hub',
-      engineers: '80+ Vetted Engineers',
+      engineers: '80+ Active Engineers',
       specialization: 'DevOps Pipelines, AWS, Azure, CI/CD Cloud Sec',
       color: '#06b6d4', // Cyan
       textColor: 'text-cyan-600',
       bgColor: 'bg-cyan-50',
       borderColor: 'border-cyan-200',
       coordinates: [39.2083, -6.7924],
-      description: 'Talent cluster for secure containerized environments, multi-region cloud infrastructures, and high-uptime build pipelines.'
+      description: 'Engineering cluster for secure containerized environments, multi-region cloud infrastructures, and high-uptime build pipelines.'
     },
     {
       id: 'mozambique',
       name: 'Mozambique',
       flag: '🇲🇿',
       capital: 'Maputo Hub',
-      engineers: '55+ Vetted Engineers',
+      engineers: '55+ Active Engineers',
       specialization: 'Cybersecurity, Pentesting, Networks, DB Security',
       color: '#ec4899', // Pink
       textColor: 'text-pink-600',
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-200',
       coordinates: [32.5732, -25.9692],
-      description: 'Talented cybersecurity experts securing critical infrastructures, network routing protocols, and database isolation levels.'
+      description: 'Cybersecurity engineering squads securing critical infrastructures, network routing protocols, and database isolation levels.'
     }
   ];
 
@@ -145,7 +145,7 @@ export default function AfricanPresence() {
             Our Elite <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-500">African Engineering</span> Network<span className="text-orange-500">.</span>
           </h2>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-            Directly collaborate with elite vetted software engineering talent spanning major tech hubs across Africa.
+            Directly collaborate with elite in-house software engineering squads spanning major tech hubs across Africa.
           </p>
         </div>
 
@@ -373,7 +373,7 @@ export default function AfricanPresence() {
                   {activeCountry.engineers}
                 </div>
                 <div className="text-gray-500 text-sm font-semibold">
-                  Fully vetted and contract-ready senior professionals.
+                  Full-time in-house software engineering squads.
                 </div>
               </div>
 

@@ -82,7 +82,7 @@ export default function PressShowcase() {
           INSIDER
         </span>
       ),
-      contentDescription: "Business Insider reports on KompasIT's rapid expansion and its success in delivering top 1% timezone-aligned software developers globally.",
+      contentDescription: "Business Insider reports on KompasIT's rapid expansion and its success in delivering state-of-the-art software systems and custom platforms globally.",
       contentLogo: (
         <span className="font-sans font-normal tracking-[0.25em] text-white text-3xl md:text-4xl select-none">
           INSIDER
@@ -96,7 +96,7 @@ export default function PressShowcase() {
           Bloomberg
         </span>
       ),
-      contentDescription: 'Bloomberg analyzes how KompasIT is solving the tech talent shortage by bridging elite global engineers with leading tech hubs.',
+      contentDescription: 'Bloomberg analyzes how KompasIT is revolutionizing digital transformation by delivering elite custom enterprise software and scalable cloud solutions.',
       contentLogo: (
         <span className="font-sans font-black tracking-tight text-white text-3xl md:text-4xl select-none">
           Bloomberg
