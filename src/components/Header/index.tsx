@@ -37,9 +37,8 @@ export default function Header() {
   ];
 
   const aboutCol1 = [
-    { name: 'Our Leadership Team', href: '#' },
+    /*{ name: 'Our Leadership Team', href: '#' },*/
     { name: 'Engineering Careers', href: '/join-us' },
-    { name: 'Press Releases', href: '#' },
     { name: 'Contact Us', href: '/contact-us' },
     { name: 'FAQs', href: '/faq', highlighted: true },
   ];
@@ -59,24 +58,24 @@ export default function Header() {
 
   const topServices = [
     { name: 'AI Development', href: '/technologies/ai', highlighted: true },
-    { name: 'Back-end Development', href: '#', highlighted: true },
+    /*{ name: 'Back-end Development', href: '#', highlighted: true },
     { name: 'CMS Development', href: '#', highlighted: true },
     { name: 'Cryptocurrency & Blockchain', href: '#' },
     { name: 'Front-end Development', href: '#' },
     { name: 'Machine Learning', href: '#', highlighted: true },
     { name: 'QA Testing & Automation', href: '#', highlighted: true },
-    { name: 'UX/UI Design', href: '#', highlighted: true },
+    { name: 'UX/UI Design', href: '#', highlighted: true },*/
   ];
 
   const softwareServices = [
     { name: 'Android App Development', href: '/solutions/android', highlighted: true },
     { name: 'Business Intelligence', href: '/solutions/business-intelligence', highlighted: true },
     { name: 'Data Engineering', href: '#' },
-    { name: 'eCommerce Development', href: '#', highlighted: true },
+    /*{ name: 'eCommerce Development', href: '#', highlighted: true },
     { name: 'iOS App Development', href: '#' },
     { name: 'Mobile App Development', href: '#', highlighted: true },
     { name: 'SaaS Development', href: '#' },
-    { name: 'Web Development', href: '#' },
+    { name: 'Web Development', href: '#' },*/
   ];
 
   const enterpriseServices = [
