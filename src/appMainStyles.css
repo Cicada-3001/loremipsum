@@ -1,0 +1,50 @@
+body {
+  width: 320px;
+  min-height: 244px;
+  font-family: 'TT Commons', system-ui, sans-serif;
+  font-size: 19px;
+  line-height: 24px;
+  color: #262b33;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+button {
+  font-family: 'TT Commons', system-ui, sans-serif;
+}
+
+/* Font Definitions */
+@font-face {
+  font-family: 'TT Commons';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('~/assets/fonts/tt_commons/TTCommons-Regular.woff2') format('woff2'),
+    url('~assets/fonts/tt_commons/TTCommons-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TT Commons';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('~assets/fonts/tt_commons/TTCommons-DemiBold.woff2') format('woff2'),
+    url('~assets/fonts/tt_commons/TTCommons-DemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TT Commons';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('~assets/fonts/tt_commons/TTCommons-Bold.woff2') format('woff2'),
+    url('~assets/fonts/tt_commons/TTCommons-Bold.woff') format('woff');
+}
