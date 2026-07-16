@@ -45,7 +45,7 @@ export default function Technologies() {
               return (
                 <span
                   key={`row1-${tech}-${idx}`}
-                  className={`font-bold text-4xl md:text-6xl tracking-tight transition-colors duration-300 cursor-pointer ${
+                  className={`font-bold text-2xl md:text-4xl tracking-tight transition-colors duration-300 cursor-pointer ${
                     isHighlighted
                       ? 'text-orange-500 hover:text-orange-600'
                       : 'text-gray-300 hover:text-gray-400'
@@ -67,7 +67,7 @@ export default function Technologies() {
               return (
                 <span
                   key={`row2-${tech}-${idx}`}
-                  className={`font-bold text-4xl md:text-6xl tracking-tight transition-colors duration-300 cursor-pointer ${
+                  className={`font-bold text-2xl md:text-4xl tracking-tight transition-colors duration-300 cursor-pointer ${
                     isHighlighted
                       ? 'text-orange-500 hover:text-orange-600'
                       : 'text-gray-300 hover:text-gray-400'

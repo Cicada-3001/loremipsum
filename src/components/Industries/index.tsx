@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 export default function Industries() {
   const industries = [
-    'Agriculture', 'Automotive', 'Aviation', 'Banking', 'Construction', 'Entertainment',
-    'Finance', 'Startups', 'Healthcare', 'Insurance', 'Fintech', 'Oil and Gas',
-    'Real Estate', 'Retail', 'Supply Chain', 'Telecommunications', 'Transportation and Logistics', 'Travel and Hospitality'
+    'Agriculture', 'Automotive', 'Aviation', 'Banking', 'Entertainment',
+    'Finance', 'Startups', 'Healthcare', 'Insurance', 'Martech', 'Oil and Gas',
+    'Real Estate', 'Retail', 'Supply Chain', 'Transportation and Logistics'
   ];
 
   return (

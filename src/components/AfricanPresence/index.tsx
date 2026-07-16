@@ -14,7 +14,7 @@ interface CountryDetail {
   name: string;
   flag: string;
   capital: string;
-  engineers: string;
+  focus: string;
   specialization: string;
   color: string;
   textColor: string;
@@ -31,98 +31,98 @@ export default function AfricanPresence() {
       name: 'Kenya',
       flag: '🇰🇪',
       capital: 'Nairobi Hub',
-      engineers: '180+ Active Engineers',
+      focus: 'Web & Cloud Software Products',
       specialization: 'React, Node.js, AI Coding, Cloud Solutions',
       color: '#00a4ef', // Microsoft Blue
       textColor: 'text-[#0078d4]',
       bgColor: 'bg-blue-50',
       borderColor: 'border-blue-200',
       coordinates: [36.8219, -1.2921],
-      description: 'East Africa\'s leading tech hub, specializing in senior web, cloud architectures, and dynamic frontends.'
+      description: 'Our Nairobi cluster builds bespoke web platforms and cloud-native software products for global clients — from SaaS dashboards to enterprise portals delivered end-to-end.'
     },
     {
       id: 'nigeria',
       name: 'Nigeria',
       flag: '🇳🇬',
       capital: 'Lagos Hub',
-      engineers: '250+ Active Engineers',
+      focus: 'Enterprise Backend & Fintech Systems',
       specialization: 'Python, Django, C# .NET Core, Backend Infrastructure',
       color: '#f25022', // Microsoft Orange/Red
       textColor: 'text-[#ea580c]',
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200',
       coordinates: [3.3792, 6.5244],
-      description: 'West Africa\'s powerhouse for robust enterprise backend architectures, scalable systems, and financial ledger pipelines.'
+      description: 'Our Lagos cluster designs and ships custom enterprise backends, financial ledger systems, and scalable APIs — purpose-built software from the ground up.'
     },
     {
       id: 'uganda',
       name: 'Uganda',
       flag: '🇺🇬',
       capital: 'Kampala Hub',
-      engineers: '90+ Active Engineers',
+      focus: 'Mobile & Cross-Platform Applications',
       specialization: 'Mobile App Swift, Kotlin, Flutter, Cross-Platform',
       color: '#ffb900', // Microsoft Gold
       textColor: 'text-amber-600',
       bgColor: 'bg-amber-50',
       borderColor: 'border-amber-200',
       coordinates: [32.5825, 0.3476],
-      description: 'A growing hub for agile mobile application engineers delivering exceptional cross-platform UI and performance optimizations.'
+      description: 'Our Kampala cluster builds polished mobile applications and cross-platform products from concept to launch — custom-engineered for outstanding user experiences.'
     },
     {
       id: 'ethiopia',
       name: 'Ethiopia',
       flag: '🇪🇹',
       capital: 'Addis Ababa Hub',
-      engineers: '110+ Active Engineers',
+      focus: 'Data-Intensive & High-Volume Systems',
       specialization: 'Java, Spring Boot, Big Data, SQL Systems',
       color: '#7fba00', // Microsoft Green
       textColor: 'text-green-600',
       bgColor: 'bg-green-50',
       borderColor: 'border-green-200',
       coordinates: [38.7469, 9.0192],
-      description: 'Core hub for large-scale data engineers, relational database performance tuning, and high-volume transaction architectures.'
+      description: 'Our Addis Ababa cluster builds custom data platforms, high-throughput processing systems, and relational database solutions for complex business domains.'
     },
     {
       id: 'rwanda',
       name: 'Rwanda',
       flag: '🇷🇼',
       capital: 'Kigali Hub',
-      engineers: '65+ Active Engineers',
+      focus: 'AI Products & Intelligent Automation',
       specialization: 'AI Automation, Machine Learning Models, Analytics',
       color: '#8b5cf6', // Purple
       textColor: 'text-purple-600',
       bgColor: 'bg-purple-50',
       borderColor: 'border-purple-200',
       coordinates: [30.0619, -1.9403],
-      description: 'Central hub for progressive artificial intelligence pipelines, data extraction algorithms, and automated analytics dashboards.'
+      description: 'Our Kigali cluster develops AI-powered software products — intelligent automation tools, ML-driven analytics platforms, and decision-support systems built to spec.'
     },
     {
       id: 'tanzania',
       name: 'Tanzania',
       flag: '🇹🇿',
       capital: 'Dar es Salaam Hub',
-      engineers: '80+ Active Engineers',
+      focus: 'DevOps & Cloud Infrastructure Products',
       specialization: 'DevOps Pipelines, AWS, Azure, CI/CD Cloud Sec',
       color: '#06b6d4', // Cyan
       textColor: 'text-cyan-600',
       bgColor: 'bg-cyan-50',
       borderColor: 'border-cyan-200',
       coordinates: [39.2083, -6.7924],
-      description: 'Engineering cluster for secure containerized environments, multi-region cloud infrastructures, and high-uptime build pipelines.'
+      description: 'Our Dar es Salaam cluster engineers resilient cloud infrastructure and CI/CD systems as bespoke products — built for multi-region uptime and security compliance.'
     },
     {
       id: 'mozambique',
       name: 'Mozambique',
       flag: '🇲🇿',
       capital: 'Maputo Hub',
-      engineers: '55+ Active Engineers',
+      focus: 'Cybersecurity & Secure Software',
       specialization: 'Cybersecurity, Pentesting, Networks, DB Security',
       color: '#ec4899', // Pink
       textColor: 'text-pink-600',
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-200',
       coordinates: [32.5732, -25.9692],
-      description: 'Cybersecurity engineering squads securing critical infrastructures, network routing protocols, and database isolation levels.'
+      description: 'Our Maputo cluster builds security-first software products — from pentesting platforms to hardened network and database systems engineered for critical infrastructure.'
     }
   ];
 
@@ -153,7 +153,7 @@ export default function AfricanPresence() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Interactive Vector Africa Map */}
-          <div className="lg:col-span-7 flex justify-center items-center bg-gray-50/50 rounded-3xl p-8 border border-gray-100 relative min-h-[460px] md:min-h-[520px]">
+          <div className="lg:col-span-7 flex justify-center items-center relative min-h-[460px] md:min-h-[520px]">
             
             <style>{`
               @keyframes map-dash {
@@ -168,15 +168,15 @@ export default function AfricanPresence() {
             `}</style>
 
             {/* The Map Container */}
-            <div className="relative w-full max-w-[420px] aspect-[400/450] flex items-center justify-center">
+            <div className="relative w-full max-w-[420px] aspect-[400/500] flex items-center justify-center">
               {mounted ? (
                 <ComposableMap
                   width={400}
-                  height={450}
+                  height={500}
                   projection="geoMercator"
                   projectionConfig={{
                     center: [17, 3],
-                    scale: 440
+                    scale: 360
                   }}
                   className="w-full h-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.03)]"
                 >
@@ -347,7 +347,7 @@ export default function AfricanPresence() {
             </div>
 
             {/* Main Interactive Details Dashboard Card */}
-            <div className={`bg-white rounded-3xl p-8 border ${activeCountry.borderColor} shadow-lg transition-all duration-500 transform scale-100 hover:shadow-xl`}>
+            <div className={`bg-white rounded-3xl p-8 border ${activeCountry.borderColor} transition-all duration-500 transform scale-100`}>
               
               <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-5">
                 <div className="flex items-center space-x-3">
@@ -367,30 +367,18 @@ export default function AfricanPresence() {
                 </div>
               </div>
 
-              {/* Highlight statistics */}
+              {/* Software Focus */}
               <div className="mb-6">
-                <div className="text-2xl font-black text-gray-900 mb-1">
-                  {activeCountry.engineers}
+                <h4 className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-2">Software Focus</h4>
+                <div className={`text-lg font-black ${activeCountry.textColor} mb-1`}>
+                  {activeCountry.focus}
                 </div>
-                <div className="text-gray-500 text-sm font-semibold">
-                  Full-time in-house software engineering squads.
+                <div className="text-gray-500 text-sm font-medium">
+                  Custom software products designed, built, and delivered end-to-end.
                 </div>
               </div>
 
-              {/* Key Technical specializations */}
-              <div className="mb-6">
-                <h4 className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-2">Core Tech Stacks</h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {activeCountry.specialization.split(', ').map((tech, idx) => (
-                    <span 
-                      key={`tech-${idx}`}
-                      className="bg-gray-50 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-lg border border-gray-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+
 
               {/* Hub Description */}
               <div>

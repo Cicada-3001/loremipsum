@@ -18,89 +18,75 @@ export default function PressShowcase() {
       id: 0,
       featuredLogo: (
         <span className="font-sans font-black tracking-tight text-white/40 group-hover:text-white/60 transition-colors duration-200 text-lg md:text-xl select-none">
-          SXSW
+          AllRentals
         </span>
       ),
       contentLogo: (
         <div className="flex flex-col text-left select-none">
-          <div className="flex items-center space-x-1.5">
-            <span className="text-4xl md:text-[46px] font-black tracking-tighter text-white leading-none">SXSW</span>
-            <svg className="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M4 18l10-10h-6v-2h10v10h-2v-6l-10 10z" />
-            </svg>
-          </div>
-          <span className="text-[11px] font-bold tracking-wider text-gray-300 mt-2 uppercase">The Great E-migration</span>
+          <span className="text-4xl md:text-[46px] font-black tracking-tighter text-white leading-none">AllRentals</span>
+          <span className="text-[11px] font-bold tracking-wider text-gray-300 mt-2 uppercase">Property Management Platform</span>
         </div>
       ),
-      contentDescription: 'Nacho De Marco, our CEO, was selected as a panelist to discuss "The Great E-Migration: Tech and the Future of LATAM" during SXSW 2024.',
+      contentDescription: 'KompasIT engineered the AllRentals platform from the ground up — a full-stack property management and tenant portal system serving landlords and tenants across East Africa.',
     },
     {
       id: 1,
       featuredLogo: (
-        <div className="flex items-center space-x-1 text-white/40 group-hover:text-white/80 transition-colors duration-200 select-none">
-          {/* CNBC Peacock logo */}
-          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-12S17.52 2 12 2zm1 .79c1.47.2 2.8.84 3.82 1.77L14.73 6.6c-.46-.38-1.04-.64-1.73-.78V2.79zM7.18 4.56c1.02-.93 2.35-1.57 3.82-1.77v3.03c-.69.14-1.27.4-1.73.78L7.18 4.56zM3.82 7.18l2.04 2.04c-.38.46-.64 1.04-.78 1.73H2.05c.2-1.47.84-2.8 1.77-3.82zm-1.03 5.82h3.03c.14.69.4 1.27.78 1.73l-2.04 2.04c-.93-1.02-1.57-2.35-1.77-3.82zm1.77 4.82l2.04-2.04c.46.38 1.04.64 1.73.78v3.03c-1.47-.2-2.8-.84-3.82-1.77zm5.82 3.82v-3.03c.69-.14 1.27-.4 1.73-.78l2.04 2.04c-1.02.93-2.35 1.57-3.82 1.77zm4.82-1.77l-2.04-2.04c.38-.46.64-1.04.78-1.73h3.03c-.2 1.47-.84 2.8-1.77 3.82zm3.82-4.82h-3.03c-.14-.69-.4-1.27-.78-1.73l2.04-2.04c.93 1.02 1.57 2.35 1.77 3.82z" />
-          </svg>
-          <span className="font-sans font-extrabold tracking-tight text-base">CNBC</span>
-        </div>
+        <span className="font-sans font-extrabold tracking-tight text-white/40 group-hover:text-white/60 transition-colors duration-200 text-base md:text-lg select-none">
+          KloudSales
+        </span>
       ),
-      contentDescription: 'KompasIT was highlighted on CNBC for accelerating digital transformation and unblocking complex SDLC bottlenecks for Fortune 500 enterprises.',
+      contentDescription: 'KompasIT built KloudSales, a cloud-based CRM and sales management tool tailored for SMEs in Kenya, enabling faster sales cycles and real-time pipeline tracking.',
       contentLogo: (
-        <div className="flex items-center space-x-2 text-white select-none">
-          <svg className="w-12 h-12" viewBox="0 0 100 100">
-            {/* CNCB Colorful Peacock Feathers */}
-            <path d="M50 35c3-10 12-15 12-15s-2 12-7 16c-3 3-5 1-5-1z" fill="#7B2CBF" />
-            <path d="M54 38c7-8 17-9 17-9s-6 10-12 12c-4 1-5-1-5-3z" fill="#E040FB" />
-            <path d="M55 43c9-4 19-2 19-2s-9 8-15 7c-4 0-4-3-4-5z" fill="#FF5722" />
-            <path d="M52 47c9 1 18 8 18 8s-11 3-16-2c-3-3-2-5-2-6z" fill="#FFC107" />
-            <path d="M47 47c-9 1-18 8-18 8s11 3 16-2c3-3 2-5 2-6z" fill="#4CAF50" />
-            <path d="M44 43c-9-4-19-2-19-2s9 8 15 7c4 0 4-3 4-5z" fill="#00B0FF" />
-          </svg>
-          <span className="text-4xl font-extrabold tracking-tighter text-white">CNBC</span>
+        <div className="flex flex-col text-left select-none">
+          <span className="text-4xl md:text-[46px] font-black tracking-tighter text-white leading-none">KloudSales</span>
+          <span className="text-[11px] font-bold tracking-wider text-gray-300 mt-2 uppercase">CRM & Sales Platform</span>
         </div>
       ),
     },
     {
       id: 2,
       featuredLogo: (
-        <span className="font-serif font-black tracking-tight text-white/40 group-hover:text-white/60 transition-colors duration-200 text-lg md:text-xl select-none">
-          Forbes
+        <span className="font-sans font-black tracking-tight text-white/40 group-hover:text-white/60 transition-colors duration-200 text-lg md:text-xl select-none">
+          Wasenda
         </span>
       ),
-      contentDescription: "Forbes features KompasIT's pioneering AI-driven software development workflows as the future of high-velocity remote engineering teams.",
+      contentDescription: 'Working alongside the Wasenda team, KompasIT delivered a robust logistics and courier management system, dramatically reducing delivery turnaround time for businesses across Nairobi.',
       contentLogo: (
-        <span className="font-serif font-black tracking-tight text-white text-4xl md:text-5xl select-none">
-          Forbes
-        </span>
+        <div className="flex flex-col text-left select-none">
+          <span className="text-4xl md:text-[46px] font-black tracking-tighter text-white leading-none">Wasenda</span>
+          <span className="text-[11px] font-bold tracking-wider text-gray-300 mt-2 uppercase">Logistics & Courier Tech</span>
+        </div>
       ),
     },
     {
       id: 3,
       featuredLogo: (
-        <span className="font-sans font-medium tracking-[0.2em] text-white/40 group-hover:text-white/60 transition-colors duration-200 text-sm md:text-base select-none">
-          INSIDER
+        <span className="font-sans font-bold tracking-tight text-white/40 group-hover:text-white/60 transition-colors duration-200 text-base md:text-lg select-none">
+          HealthBridge
         </span>
       ),
-      contentDescription: "Business Insider reports on KompasIT's rapid expansion and its success in delivering state-of-the-art software systems and custom platforms globally.",
+      contentDescription: 'KompasIT developed a telemedicine and patient records platform for HealthBridge, enabling clinics across Kenya to manage consultations, prescriptions, and records digitally.',
       contentLogo: (
-        <span className="font-sans font-normal tracking-[0.25em] text-white text-3xl md:text-4xl select-none">
-          INSIDER
-        </span>
+        <div className="flex flex-col text-left select-none">
+          <span className="text-4xl md:text-[46px] font-black tracking-tighter text-white leading-none">HealthBridge</span>
+          <span className="text-[11px] font-bold tracking-wider text-gray-300 mt-2 uppercase">Telemedicine Platform</span>
+        </div>
       ),
     },
     {
       id: 4,
       featuredLogo: (
         <span className="font-sans font-extrabold tracking-tight text-white/40 group-hover:text-white/60 transition-colors duration-200 text-base md:text-lg select-none">
-          Bloomberg
+          AgroLink
         </span>
       ),
-      contentDescription: 'Bloomberg analyzes how KompasIT is revolutionizing digital transformation by delivering elite custom enterprise software and scalable cloud solutions.',
+      contentDescription: 'KompasIT partnered with AgroLink to build a farmer-to-market digital platform, connecting smallholder farmers directly to buyers and reducing post-harvest losses across rural Kenya.',
       contentLogo: (
-        <span className="font-sans font-black tracking-tight text-white text-3xl md:text-4xl select-none">
-          Bloomberg
-        </span>
+        <div className="flex flex-col text-left select-none">
+          <span className="text-4xl md:text-[46px] font-black tracking-tighter text-white leading-none">AgroLink</span>
+          <span className="text-[11px] font-bold tracking-wider text-gray-300 mt-2 uppercase">AgriTech Marketplace</span>
+        </div>
       ),
     },
   ];

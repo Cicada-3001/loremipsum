@@ -22,10 +22,10 @@ export default function Header() {
   const timeoutProductsRef = useRef<NodeJS.Timeout | null>(null);
   // Product links for dropdown
   const productLinks = [
-    { name: 'AllRentals', href: 'https://allrentals.app' },
-    { name: 'KloudSales', href: 'https://KloudSales.com' },
+    { name: 'AllRentals', href: 'https://allrentals.app', logo: '/allrentals_logo.jpg' },
+    { name: 'KloudSales', href: 'https://KloudSales.com', logo: '/kloudsales_logo.jpg' },
     { name: 'Wasenda', href: 'https://Wasenda.com' },
-    { name: 'Frappe', href: 'https://frappe.io/products' },
+    { name: 'Frappe', href: 'https://frappe.io/products', logo: '/frappe.png' },
   ];
 
   const navItems = [
@@ -34,8 +34,8 @@ export default function Header() {
     { label: 'Services', href: '#' },
     { label: 'Industries', href: '#' },
     { label: 'About', href: '#' },
-    { label: 'Our Work', href: '#' }, // no page yet
-    { label: 'Blog', href: '#' }, // no page yet
+    /*{ label: 'Our Work', href: '#' }, // no page yet
+    { label: 'Blog', href: '#' }, // no page yet*/
   ];
 
   const aboutCol1 = [
@@ -46,15 +46,15 @@ export default function Header() {
   ];
 
   const aboutCol2 = [
-    { name: 'Awards', href: '#' },
-    { name: 'Certifications', href: '#' },
+    /*{ name: 'Awards', href: '#' },
+    { name: 'Certifications', href: '#' },*/
   ];
 
   const aboutCol3 = [
     { name: 'Working at KompasIT', href: '/join-us' },
-    { name: 'Job Opportunities', href: '#' },
+    /*{ name: 'Job Opportunities', href: '#' },
     { name: 'Partner Programs', href: '#' },
-    { name: 'Our Circles Program', href: '#' },
+    { name: 'Our Circles Program', href: '#' },*/
     { name: 'Company Culture', href: '/company-culture', highlighted: true },
   ];
 
@@ -72,8 +72,8 @@ export default function Header() {
   const softwareServices = [
     { name: 'Android App Development', href: '/solutions/android', highlighted: true },
     { name: 'Business Intelligence', href: '/solutions/business-intelligence', highlighted: true },
-    { name: 'Data Engineering', href: '#' },
-    /*{ name: 'eCommerce Development', href: '#', highlighted: true },
+    /*{ name: 'Data Engineering', href: '#' },
+    { name: 'eCommerce Development', href: '#', highlighted: true },
     { name: 'iOS App Development', href: '#' },
     { name: 'Mobile App Development', href: '#', highlighted: true },
     { name: 'SaaS Development', href: '#' },
@@ -81,13 +81,13 @@ export default function Header() {
   ];
 
   const enterpriseServices = [
-    { name: 'Backup Solutions', href: '#', highlighted: true },
+    /*{ name: 'Backup Solutions', href: '#', highlighted: true },
     { name: 'Big Data', href: '#' },
     { name: 'Cloud Applications', href: '#', highlighted: true },
-    { name: 'CRM Systems', href: '#' },
+    { name: 'CRM Systems', href: '#' },*/
     { name: 'Cybersecurity', href: '/solutions/cybersecurity', highlighted: true },
-    { name: 'DevOps', href: '#', highlighted: true },
-    { name: 'Digital Transformation', href: '#', highlighted: true },
+    /*{ name: 'DevOps', href: '#', highlighted: true },
+    { name: 'Digital Transformation', href: '#', highlighted: true },*/
     { name: 'ERP Development', href: '/solutions/erp', highlighted: true },
   ];
 
@@ -98,12 +98,12 @@ export default function Header() {
     { name: 'Finance', href: '/industries/finance', highlighted: true },
     { name: 'Insurance', href: '/industries/insurance', highlighted: true },
     { name: 'Real Estate', href: '/industries/real-estate', highlighted: true },
-    { name: 'Telecommunications', href: '#' },
+    /*{ name: 'Telecommunications', href: '#' },*/
   ];
 
   const industriesCol2 = [
     { name: 'Automotive', href: '/industries/automotive', highlighted: true },
-    { name: 'Construction', href: '#' },
+    /*{ name: 'Construction', href: '#' },*/
     { name: 'Startups', href: '/industries/startups', highlighted: true },
     { name: 'Martech', href: '/industries/martech', highlighted: true },
     { name: 'Retail', href: '/industries/retail', highlighted: true },
@@ -116,7 +116,7 @@ export default function Header() {
     { name: 'Healthcare', href: '/industries/healthcare', highlighted: true },
     { name: 'Oil and Gas', href: '/industries/oil-gas', highlighted: true },
     { name: 'Supply Chain', href: '/industries/supply-chain', highlighted: true },
-    { name: 'Travel and Hospitality', href: '#' },
+    /*{ name: 'Travel and Hospitality', href: '#' },*/
   ];
 
   const handleMouseEnter = () => {
@@ -170,21 +170,21 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           
           {/* Microsoft 4-Color Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-white flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+          <Link href="/" className="flex items-center gap-1.5 group">
+            <div id="nav-logo" className="w-10 h-10 bg-white flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <svg viewBox="0 0 23 23" className="w-5.5 h-5.5">
                 <rect x="0" y="0" width="10.5" height="10.5" fill="#f25022" />
                 <rect x="12" y="0" width="10.5" height="10.5" fill="#7fba00" />
                 <rect x="0" y="12" width="10.5" height="10.5" fill="#00a4ef" />
               </svg>
             </div>
-            <span className="text-xl font-semibold text-gray-900 tracking-tight select-none">
+            <span className="text-[17.5px] font-semibold text-gray-900 tracking-tight select-none">
               KOMPAS IT
             </span>
           </Link>
 
           {/* Desktop Navigation with Accent */}
-          <nav className="hidden md:flex items-center space-x-8 h-full">
+          <nav className="hidden md:flex items-center space-x-6 h-full">
             {navItems.map((item) => {
               if (item.label === 'Services') {
                 return (
@@ -195,7 +195,7 @@ export default function Header() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
-                      className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 h-full cursor-pointer ${
                         isServicesOpen ? 'text-[#0078d4]' : 'text-gray-600 hover:text-[#0078d4]'
                       }`}
                     >
@@ -225,7 +225,7 @@ export default function Header() {
                     onMouseLeave={handleIndustriesMouseLeave}
                   >
                     <button
-                      className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 h-full cursor-pointer ${
                         isIndustriesOpen ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
@@ -255,7 +255,7 @@ export default function Header() {
                     onMouseLeave={handleProductsMouseLeave}
                   >
                     <button
-                      className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 h-full cursor-pointer ${
                         isProductsOpen ? 'text-[#0078d4]' : 'text-gray-600 hover:text-[#0078d4]'
                       }`}
                     >
@@ -284,7 +284,7 @@ export default function Header() {
                     onMouseLeave={handleAboutMouseLeave}
                   >
                     <button
-                      className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 h-full cursor-pointer ${
                         isAboutOpen ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
@@ -309,7 +309,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="relative text-gray-600 hover:text-[#0078d4] font-semibold transition-colors h-full flex items-center text-[15px] group"
+                  className="relative text-gray-600 hover:text-[#0078d4] font-medium transition-colors h-full flex items-center text-sm group"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0078d4] transition-all duration-300 group-hover:w-full"></span>
@@ -318,7 +318,7 @@ export default function Header() {
             })}
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#0078d4] text-white px-4 py-2 text-sm rounded-lg hover:bg-[#005a9e] transition-all duration-200 font-semibold shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98] cursor-pointer">
+              className="bg-[#0078d4] text-white px-4 py-2 text-sm rounded-lg hover:bg-[#005a9e] transition-all duration-200 font-semibold active:scale-[0.98] cursor-pointer">
               Schedule a Call
             </button>
           </nav>
@@ -390,8 +390,8 @@ export default function Header() {
                         href={service.href}
                         className={`text-[13px] transition-all duration-200 flex items-center gap-2 group/item select-none cursor-pointer ${
                           service.highlighted
-                            ? 'text-[#0078d4] font-semibold hover:text-[#005a9e]'
-                            : 'text-gray-500 hover:text-[#0078d4] font-medium'
+                            ? 'text-gray-500 font-semibold hover:text-gray-900'
+                            : 'text-gray-500 hover:text-gray-900 font-medium'
                         }`}
                       >
                         {service.highlighted && (
@@ -415,8 +415,8 @@ export default function Header() {
                         href={service.href}
                         className={`text-[13px] transition-all duration-200 flex items-center gap-2 group/item select-none cursor-pointer ${
                           service.highlighted
-                            ? 'text-[#0078d4] font-semibold hover:text-[#005a9e]'
-                            : 'text-gray-500 hover:text-[#0078d4] font-medium'
+                            ? 'text-gray-500 font-semibold hover:text-gray-900'
+                            : 'text-gray-500 hover:text-gray-900 font-medium'
                         }`}
                       >
                         {service.highlighted && (
@@ -441,8 +441,8 @@ export default function Header() {
                         href={service.href}
                         className={`text-[13px] transition-all duration-200 flex items-center gap-2 group/item select-none cursor-pointer ${
                           service.highlighted
-                            ? 'text-[#0078d4] font-semibold hover:text-[#005a9e]'
-                            : 'text-gray-500 hover:text-[#0078d4] font-medium'
+                            ? 'text-gray-500 font-semibold hover:text-gray-900'
+                            : 'text-gray-500 hover:text-gray-900 font-medium'
                         }`}
                       >
                         {service.highlighted && (
@@ -521,7 +521,7 @@ export default function Header() {
                       href={ind.href}
                       className={`text-[13.5px] transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer ${
                         ind.highlighted
-                          ? 'text-gray-900 font-semibold hover:text-gray-700'
+                          ? 'text-gray-500 font-semibold hover:text-gray-900'
                           : 'text-gray-500 hover:text-gray-900 font-medium'
                       }`}
                     >
@@ -539,8 +539,15 @@ export default function Header() {
                     <Link
                       key={ind.name}
                       href={ind.href}
-                      className="text-[13.5px] text-gray-500 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                      className={`text-[13.5px] transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer ${
+                        ind.highlighted
+                          ? 'text-gray-500 font-semibold hover:text-gray-900'
+                          : 'text-gray-500 hover:text-gray-900 font-medium'
+                      }`}
                     >
+                      {ind.highlighted && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0 animate-pulse"></span>
+                      )}
                       <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                     </Link>
                   ))}
@@ -552,8 +559,15 @@ export default function Header() {
                     <Link
                       key={ind.name}
                       href={ind.href}
-                      className="text-[13.5px] text-gray-500 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                      className={`text-[13.5px] transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer ${
+                        ind.highlighted
+                          ? 'text-gray-500 font-semibold hover:text-gray-900'
+                          : 'text-gray-500 hover:text-gray-900 font-medium'
+                      }`}
                     >
+                      {ind.highlighted && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0 animate-pulse"></span>
+                      )}
                       <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                     </Link>
                   ))}
@@ -606,15 +620,19 @@ export default function Header() {
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 rounded-lg border border-gray-100 hover:border-[#0078d4] hover:bg-blue-50 transition-all duration-200 group"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-gray-100 hover:border-[#0078d4] hover:bg-blue-50 transition-all duration-200 group"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-[#0078d4]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0078d4]/20 transition-colors">
-                      <svg className="w-4 h-4 text-[#0078d4]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
+                    <div className="w-9 h-9 rounded-lg bg-[#0078d4]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0078d4]/20 transition-colors overflow-hidden">
+                      {p.logo ? (
+                        <img src={p.logo} alt={p.name} className="w-full h-full object-cover" />
+                      ) : (
+                        <svg className="w-4 h-4 text-[#0078d4]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      )}
                     </div>
                     <div>
-                      <span className="text-[15px] font-semibold text-gray-800 group-hover:text-[#0078d4] transition-colors block">
+                      <span className="text-[15px] text-gray-800 group-hover:text-[#0078d4] transition-colors block">
                         {p.name}
                       </span>
                     </div>
@@ -688,7 +706,7 @@ export default function Header() {
                 </div>
 
                 {/* Column 2 */}
-                <div>
+                {/* <div>
                   <h4 className="text-[11px] font-extrabold text-gray-400 tracking-wider uppercase mb-5 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-sm bg-orange-500"></span>
                     RECOGNITIONS
@@ -704,7 +722,7 @@ export default function Header() {
                       </Link>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Column 3 */}
                 <div>
@@ -784,7 +802,7 @@ export default function Header() {
                             key={s.name}
                             href={s.href}
                             onClick={() => setIsOpen(false)}
-                            className={`text-sm flex items-center gap-1.5 ${s.highlighted ? 'text-[#0078d4] font-semibold' : 'text-gray-500 font-medium'}`}
+                            className={`text-sm flex items-center gap-1.5 ${s.highlighted ? 'text-gray-500 font-semibold' : 'text-gray-500 font-medium'}`}
                           >
                             {s.highlighted && <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>}
                             {s.name}
@@ -801,7 +819,7 @@ export default function Header() {
                             key={s.name}
                             href={s.href}
                             onClick={() => setIsOpen(false)}
-                            className={`text-sm flex items-center gap-1.5 ${s.highlighted ? 'text-[#0078d4] font-semibold' : 'text-gray-500 font-medium'}`}
+                            className={`text-sm flex items-center gap-1.5 ${s.highlighted ? 'text-gray-500 font-semibold' : 'text-gray-500 font-medium'}`}
                           >
                             {s.highlighted && <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>}
                             {s.name}
@@ -818,7 +836,7 @@ export default function Header() {
                             key={s.name}
                             href={s.href}
                             onClick={() => setIsOpen(false)}
-                            className={`text-sm flex items-center gap-1.5 ${s.highlighted ? 'text-[#0078d4] font-semibold' : 'text-gray-500 font-medium'}`}
+                            className={`text-sm flex items-center gap-1.5 ${s.highlighted ? 'text-gray-500 font-semibold' : 'text-gray-500 font-medium'}`}
                           >
                             {s.highlighted && <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>}
                             {s.name}

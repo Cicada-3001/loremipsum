@@ -24,11 +24,17 @@ export default function JoinUsPage() {
               </Link>
             </div>
             {/* Image */}
-            <div className="relative h-[300px] md:h-[400px] lg:h-[450px] w-full rounded-2xl overflow-hidden shadow-xl group">
-              <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                style={{ backgroundImage: 'url(/join_us_hero.jpg)' }}
-              />
+            <div className="relative h-[300px] md:h-[400px] lg:h-[450px] w-full group drop-shadow-2xl">
+              <div 
+                className="absolute inset-0 bg-blue-50 overflow-hidden"
+                style={{ clipPath: 'polygon(0 0, 100% 0, 85% 100%, 15% 100%)' }}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out blur-[2px] scale-105 group-hover:scale-110 opacity-90"
+                  style={{ backgroundImage: 'url(/kenyan-devs.png)' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent pointer-events-none mix-blend-overlay" />
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +92,7 @@ export default function JoinUsPage() {
             <div className="relative h-[300px] md:h-[400px] lg:h-[450px] w-full rounded-2xl overflow-hidden shadow-xl group">
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                style={{ backgroundImage: 'url(/join_us_culture.jpg)' }}
+                style={{ backgroundImage: 'url(/join_us_culture.png)' }}
               />
             </div>
             {/* Text */}
