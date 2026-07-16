@@ -94,7 +94,7 @@ export default function ERPDevelopmentPage() {
                 ERP Software Development Services
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-[46px] font-extrabold text-gray-950 leading-[1.1] tracking-tight mb-6">
-                Build custom ERP solutions with experts trusted by 1500+ companies.
+                Build custom ERP solutions with experts trusted by 40+ companies.
               </h1>
               <p className="text-[15.5px] leading-relaxed text-gray-600 font-medium mb-10 max-w-[620px]">
                 Looking for a partner who can deliver enterprise-grade ERP systems?{' '}
@@ -181,9 +181,9 @@ export default function ERPDevelopmentPage() {
                       onChange={(e) => setFormData({ ...formData, needs: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-[#fdfdfd] placeholder-gray-400 text-sm focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all resize-none"
                     />
-                    <button
+                    <button onClick={() => fetch('/api/send-email', { method: 'POST' }).then(() => alert('Request sent!'))} 
                       type="submit"
-                      className="w-full py-4 px-6 bg-orange-600 text-white font-extrabold text-sm uppercase tracking-wider rounded-lg shadow-md shadow-orange-500/10 hover:bg-orange-700 active:scale-[0.98] transition-all duration-200 cursor-pointer mt-1"
+                      className="w-full py-4 px-5 bg-orange-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md shadow-orange-500/10 hover:bg-orange-700 active:scale-[0.98] transition-all duration-200 cursor-pointer mt-1"
                     >
                       Jump-start Your Project
                     </button>
@@ -200,7 +200,7 @@ export default function ERPDevelopmentPage() {
       <section className="bg-white border-b border-gray-200/50 py-10 overflow-hidden select-none">
         <div className="container mx-auto px-6 max-w-7xl">
           <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block text-center mb-6">
-            TRUSTED BY CTOS AT 1500+ COMPANIES:
+            TRUSTED BY CTOS AT 40+ COMPANIES:
           </span>
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 opacity-60">
             {clientLogos.map((name) => (
@@ -449,7 +449,7 @@ export default function ERPDevelopmentPage() {
             </h2>
             <p className="text-[14.5px] font-medium max-w-xl" style={{color:'#555'}}>
               We&apos;ve delivered projects across{' '}
-              <span className="text-orange-500">130+ industry sectors</span>. You won&apos;t have to spend weeks getting us up to speed.{' '}
+              <span className="text-orange-500">18+ industry sectors</span>. You won&apos;t have to spend weeks getting us up to speed.{' '}
               <span className="text-orange-500">Our engineers</span> come in with a clear understanding of your industry&apos;s operational complexity,{' '}
               <span className="text-orange-500">compliance requirements</span>, and unique business processes.
             </p>

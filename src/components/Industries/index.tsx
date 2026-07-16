@@ -16,17 +16,17 @@ export default function Industries() {
             Industries
           </h2>
           <p className="text-xl text-gray-600 mb-6">
-            We&apos;ve delivered 1250+ projects across 130+ sectors. Experience in your industry? We have it.
+            We&apos;ve delivered 40+ projects across 18+ sectors. Experience in your industry? We have it.
           </p>
           
           {/* Stats */}
           <div className="flex items-center space-x-8 mb-8">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-blue-600">1250+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600">40+</div>
               <div className="text-gray-500">Projects Delivered</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-blue-600">130+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600">18+</div>
               <div className="text-gray-500">Industry Sectors</div>
             </div>
           </div>

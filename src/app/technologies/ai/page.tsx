@@ -403,9 +403,9 @@ export default function AIDevelopmentPage() {
                       />
                     </div>
 
-                    <button
+                    <button onClick={() => fetch('/api/send-email', { method: 'POST' }).then(() => alert('Request sent!'))} 
                       type="submit"
-                      className="w-full py-4 px-6 bg-orange-600 text-white font-extrabold text-sm uppercase tracking-wider rounded-lg shadow-md shadow-orange-500/10 hover:bg-orange-700 hover:shadow-orange-500/20 active:scale-[0.98] transition-all duration-200 select-none cursor-pointer mt-2"
+                      className="w-full py-4 px-5 bg-orange-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md shadow-orange-500/10 hover:bg-orange-700 hover:shadow-orange-500/20 active:scale-[0.98] transition-all duration-200 select-none cursor-pointer mt-2"
                     >
                       Jump-start Your Project
                     </button>
@@ -423,7 +423,7 @@ export default function AIDevelopmentPage() {
       <section className="bg-white border-b border-gray-200/50 py-10 overflow-hidden select-none">
         <div className="container mx-auto px-6 max-w-7xl">
           <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block text-center mb-6">
-            TRUSTED BY CTOS AT 1500+ COMPANIES:
+            TRUSTED BY CTOS AT 40+ COMPANIES:
           </span>
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 lg:gap-16 opacity-75">
             {clientLogos.map((logo) => (

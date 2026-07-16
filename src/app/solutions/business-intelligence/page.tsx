@@ -136,7 +136,7 @@ export default function BusinessIntelligencePage() {
                 Turn complex data into decisive action with vetted <span className="text-[#0078d4]">BI</span> experts.
               </h1>
               <p className="text-[15.5px] leading-relaxed text-gray-600 font-medium mb-10 max-w-[620px]">
-                Work with elite Business Intelligence architects and data engineers trusted by 1500+ companies. Ship custom{' '}
+                Work with elite Business Intelligence architects and data engineers trusted by 40+ companies. Ship custom{' '}
                 <span className="text-[#0078d4]">dashboard suites</span>, optimized{' '}
                 <span className="text-[#0078d4]">warehouse architectures</span>, and automated reporting systems.
               </p>
@@ -216,9 +216,9 @@ export default function BusinessIntelligencePage() {
                       onChange={(e) => setFormData({ ...formData, needs: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-[#fdfdfd] placeholder-gray-400 text-sm focus:outline-none focus:border-[#0078d4] focus:ring-2 focus:ring-blue-100 transition-all resize-none"
                     />
-                    <button
+                    <button onClick={() => fetch('/api/send-email', { method: 'POST' }).then(() => alert('Request sent!'))} 
                       type="submit"
-                      className="w-full py-4 px-6 bg-orange-600 text-white font-extrabold text-sm uppercase tracking-wider rounded-lg shadow-md shadow-orange-500/10 hover:bg-orange-700 active:scale-[0.98] transition-all duration-200 cursor-pointer mt-1"
+                      className="w-full py-4 px-5 bg-orange-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md shadow-orange-500/10 hover:bg-orange-700 active:scale-[0.98] transition-all duration-200 cursor-pointer mt-1"
                     >
                       Jump-start Your Project
                     </button>
@@ -235,7 +235,7 @@ export default function BusinessIntelligencePage() {
       <section className="bg-white border-b border-gray-200/50 py-10 overflow-hidden select-none">
         <div className="container mx-auto px-6 max-w-7xl">
           <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block text-center mb-6">
-            TRUSTED BY CTOS AT 1500+ COMPANIES:
+            TRUSTED BY CTOS AT 40+ COMPANIES:
           </span>
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 opacity-60">
             {clientLogos.map((name) => (

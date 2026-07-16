@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ScheduleCallModal from '@/components/ScheduleCallModal';
 
 export default function HeroSection() {
   const phrases = [
@@ -11,6 +12,7 @@ export default function HeroSection() {
 
   const [currentPhraseIdx, setCurrentPhraseIdx] = useState(0);
   const [fade, setFade] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const images = [
     '/hero-bg.png',
@@ -76,10 +78,12 @@ export default function HeroSection() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
-              <button className="bg-[#0078d4] text-white px-8 py-3.5 rounded-lg hover:bg-[#005a9e] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-semibold shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 cursor-pointer text-center">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#0078d4] text-white px-6 py-2.5 text-base rounded-lg hover:bg-[#005a9e] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-semibold shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 cursor-pointer text-center">
                 Schedule a Call
               </button>
-              <button className="bg-white text-[#0078d4] border border-[#0078d4] px-8 py-3.5 rounded-lg hover:bg-blue-50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-semibold shadow-sm cursor-pointer text-center">
+              <button className="bg-white text-[#0078d4] border border-[#0078d4] px-6 py-2.5 text-base rounded-lg hover:bg-blue-50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-semibold shadow-sm cursor-pointer text-center">
                 View Our Work
               </button>
             </div>
@@ -136,7 +140,6 @@ export default function HeroSection() {
                   <path fill="#f25022" d="M0 0h10.5v10.5H0z" />
                   <path fill="#7fba00" d="M12 0h10.5v10.5H12z" />
                   <path fill="#00a4ef" d="M0 12h10.5v10.5H0z" />
-                  <path fill="#ffb900" d="M12 12h10.5v10.5H12z" />
                 </svg>
                 <span className="text-xl font-bold tracking-tight text-gray-600 font-sans">Microsoft</span>
               </div>
@@ -200,6 +203,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      <ScheduleCallModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

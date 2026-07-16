@@ -34,7 +34,7 @@ export default function FAQPage() {
       items: [
         {
           question: 'What does KompasIT do?',
-          answer: 'KompasIT is a premier software engineering and solutions delivery firm. We design, build, ship, and optimize high-complexity software products for leading global enterprises. Utilizing advanced AI-augmented development tools, our in-house senior engineers cover the full product lifecycle: from initial discovery, strategy, and UX/UI design to custom software engineering, AI/ML systems integration, cloud infrastructure, DevOps, and continuous product evolution across 130+ industries.'
+          answer: 'KompasIT is a premier software engineering and solutions delivery firm. We design, build, ship, and optimize high-complexity software products for leading enterprises. Utilizing advanced AI-augmented development tools, our in-house senior engineers cover the full product lifecycle: from initial discovery, strategy, and UX/UI design to custom software engineering, AI/ML systems integration, cloud infrastructure, DevOps, and continuous product evolution across 18+ industries.'
         },
         {
           question: 'How does KompasIT deliver software solutions?',
@@ -55,7 +55,7 @@ export default function FAQPage() {
       items: [
         {
           question: 'What industries does KompasIT work with?',
-          answer: 'We have delivered software solutions across 130+ industries, including fintech, retail, ecommerce, logistics, education, media, insurance, healthcare, aviation, and manufacturing. We’ve also completed hundreds of projects in highly regulated sectors like banking and energy. Each project is staffed with in-house engineers experienced in the technologies and compliance standards required for that industry, so teams ramp up faster and execute with less risk.'
+          answer: 'We have delivered software solutions across 18+ industries, including fintech, retail, ecommerce, logistics, education, media, insurance, healthcare, aviation, and manufacturing. We\'ve also completed projects in highly regulated sectors like banking and energy. Each project is staffed with in-house engineers experienced in the technologies and compliance standards required for that industry, so teams ramp up faster and execute with less risk.'
         }
       ]
     },

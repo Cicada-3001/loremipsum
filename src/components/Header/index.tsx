@@ -2,9 +2,11 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import ScheduleCallModal from '@/components/ScheduleCallModal';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
@@ -32,8 +34,8 @@ export default function Header() {
     { label: 'Services', href: '#' },
     { label: 'Industries', href: '#' },
     { label: 'About', href: '#' },
-    { label: 'Our Work', href: '#' },
-    { label: 'Blog', href: '#' },
+    { label: 'Our Work', href: '#' }, // no page yet
+    { label: 'Blog', href: '#' }, // no page yet
   ];
 
   const aboutCol1 = [
@@ -162,6 +164,7 @@ export default function Header() {
   };
 
   return (
+    <>
     <header className="sticky top-0 z-50 bg-white/97 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="flex items-center justify-between h-20">
@@ -173,7 +176,6 @@ export default function Header() {
                 <rect x="0" y="0" width="10.5" height="10.5" fill="#f25022" />
                 <rect x="12" y="0" width="10.5" height="10.5" fill="#7fba00" />
                 <rect x="0" y="12" width="10.5" height="10.5" fill="#00a4ef" />
-                <rect x="12" y="12" width="10.5" height="10.5" fill="#ffffff" />
               </svg>
             </div>
             <span className="text-xl font-semibold text-gray-900 tracking-tight select-none">
@@ -224,12 +226,12 @@ export default function Header() {
                   >
                     <button
                       className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
-                        isIndustriesOpen ? 'text-orange-600' : 'text-gray-600 hover:text-orange-600'
+                        isIndustriesOpen ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
                       {item.label}
                       <svg
-                        className={`w-3.5 h-3.5 transition-transform duration-255 ${isIndustriesOpen ? 'rotate-180 text-orange-600' : 'text-gray-400'}`}
+                        className={`w-3.5 h-3.5 transition-transform duration-255 ${isIndustriesOpen ? 'rotate-180 text-gray-700' : 'text-gray-400'}`}
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
@@ -239,7 +241,7 @@ export default function Header() {
                       </svg>
                     </button>
                     {/* Orange style bottom border when Industries Mega Menu is open */}
-                    <span className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-200 ${isIndustriesOpen ? 'w-full' : 'w-0'}`}></span>
+                    <span className={`absolute bottom-0 left-0 h-0.5 bg-gray-800 transition-all duration-200 ${isIndustriesOpen ? 'w-full' : 'w-0'}`}></span>
                   </div>
                 );
               }
@@ -283,12 +285,12 @@ export default function Header() {
                   >
                     <button
                       className={`flex items-center gap-1 text-[15px] font-semibold transition-colors duration-200 h-full cursor-pointer ${
-                        isAboutOpen ? 'text-orange-600' : 'text-gray-600 hover:text-orange-600'
+                        isAboutOpen ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
                       {item.label}
                       <svg
-                        className={`w-3.5 h-3.5 transition-transform duration-255 ${isAboutOpen ? 'rotate-180 text-orange-600' : 'text-gray-400'}`}
+                        className={`w-3.5 h-3.5 transition-transform duration-255 ${isAboutOpen ? 'rotate-180 text-gray-700' : 'text-gray-400'}`}
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
@@ -298,7 +300,7 @@ export default function Header() {
                       </svg>
                     </button>
                     {/* Orange style bottom border when About Mega Menu is open */}
-                    <span className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-200 ${isAboutOpen ? 'w-full' : 'w-0'}`}></span>
+                    <span className={`absolute bottom-0 left-0 h-0.5 bg-gray-800 transition-all duration-200 ${isAboutOpen ? 'w-full' : 'w-0'}`}></span>
                   </div>
                 );
               }
@@ -314,7 +316,9 @@ export default function Header() {
                 </Link>
               );
             })}
-            <button className="bg-[#0078d4] text-white px-6 py-2.5 rounded-lg hover:bg-[#005a9e] transition-all duration-200 font-semibold shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98] cursor-pointer">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="bg-[#0078d4] text-white px-4 py-2 text-sm rounded-lg hover:bg-[#005a9e] transition-all duration-200 font-semibold shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98] cursor-pointer">
               Schedule a Call
             </button>
           </nav>
@@ -375,7 +379,7 @@ export default function Header() {
                 
                 {/* Column 1: TOP SERVICES */}
                 <div>
-                  <h4 className="text-[11px] font-extrabold text-orange-600 tracking-wider uppercase mb-5 flex items-center gap-1.5">
+                  <h4 className="text-[11px] font-extrabold text-gray-500 tracking-wider uppercase mb-5 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-orange-600"></span>
                     Top Services
                   </h4>
@@ -426,7 +430,7 @@ export default function Header() {
 
                 {/* Column 3: ENTERPRISE FOCUSED */}
                 <div>
-                  <h4 className="text-[11px] font-extrabold text-orange-600 tracking-wider uppercase mb-5 flex items-center gap-1.5">
+                  <h4 className="text-[11px] font-extrabold text-gray-500 tracking-wider uppercase mb-5 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-orange-600"></span>
                     Enterprise Focused
                   </h4>
@@ -484,14 +488,14 @@ export default function Header() {
             <div className="col-span-3 border-r border-gray-100 pr-8">
               <h3 className="text-xl font-bold text-gray-950 mb-2">Industries</h3>
               <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                We&apos;ve delivered 1250+ projects across 130+ sectors. Experience in your industry? We have it.
+                We&apos;ve delivered 40+ projects across 18+ sectors. Experience in your industry? We have it.
               </p>
               
               <div className="border-t border-gray-100 pt-6">
                 {/* IQVIA style client brand panel */}
                 <div className="flex items-center space-x-2 mb-3 select-none">
                   {/* Custom IQVIA logo graphics */}
-                  <svg viewBox="0 0 100 25" className="h-5 text-orange-600 fill-current">
+                  <svg viewBox="0 0 100 25" className="h-5 text-gray-700 fill-current">
                     <path d="M5 2h4v15H5zm8 0h3l4 10 4-10h3v15h-4V7l-3.5 10h-2L13 7v10h-4z" />
                   </svg>
                   <span className="text-[12px] font-black text-gray-900 tracking-wider uppercase">IQVIA</span>
@@ -499,7 +503,7 @@ export default function Header() {
                 <p className="text-[12.5px] text-gray-500 leading-normal mb-2.5">
                   We scaled IQVIA&apos;s clinical research platforms with React.
                 </p>
-                <Link href="#" className="text-orange-500 font-extrabold text-[12.5px] hover:underline inline-flex items-center gap-0.5">
+                <Link href="#" className="text-gray-800 font-extrabold text-[12.5px] hover:underline inline-flex items-center gap-0.5">
                   Read case study <span className="text-sm">→</span>
                 </Link>
               </div>
@@ -517,8 +521,8 @@ export default function Header() {
                       href={ind.href}
                       className={`text-[13.5px] transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer ${
                         ind.highlighted
-                          ? 'text-orange-600 font-semibold hover:text-orange-700'
-                          : 'text-gray-500 hover:text-orange-600 font-medium'
+                          ? 'text-gray-900 font-semibold hover:text-gray-700'
+                          : 'text-gray-500 hover:text-gray-900 font-medium'
                       }`}
                     >
                       {ind.highlighted && (
@@ -535,7 +539,7 @@ export default function Header() {
                     <Link
                       key={ind.name}
                       href={ind.href}
-                      className="text-[13.5px] text-gray-500 hover:text-orange-600 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                      className="text-[13.5px] text-gray-500 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
                     >
                       <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                     </Link>
@@ -548,7 +552,7 @@ export default function Header() {
                     <Link
                       key={ind.name}
                       href={ind.href}
-                      className="text-[13.5px] text-gray-500 hover:text-orange-600 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                      className="text-[13.5px] text-gray-500 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
                     >
                       <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                     </Link>
@@ -561,7 +565,7 @@ export default function Header() {
               <div className="mt-8 pt-6 border-t border-gray-100 flex items-center">
                 <Link
                   href="/"
-                  className="text-[13px] font-black text-gray-900 hover:text-orange-600 inline-flex items-center gap-1.5 group/all"
+                  className="text-[13px] font-black text-gray-900 hover:text-gray-700 inline-flex items-center gap-1.5 group/all"
                 >
                   All Industries
                   <span className="group-hover/all:translate-x-0.5 transition-transform duration-200">→</span>
@@ -613,7 +617,6 @@ export default function Header() {
                       <span className="text-[15px] font-semibold text-gray-800 group-hover:text-[#0078d4] transition-colors block">
                         {p.name}
                       </span>
-                      <span className="text-[12px] text-gray-400">{p.href.replace('https://', '')}</span>
                     </div>
                   </Link>
                 ))}
@@ -637,7 +640,7 @@ export default function Header() {
             
             {/* Left Column: About info */}
             <div className="col-span-3 border-r border-gray-100 pr-8">
-              <h3 className="text-[17px] font-bold text-gray-950 mb-4 tracking-tight">About<span className="text-orange-600">.</span></h3>
+              <h3 className="text-[17px] font-bold text-gray-950 mb-4 tracking-tight">About<span className="text-gray-400">.</span></h3>
               <p className="text-[13px] text-gray-500 mb-6 leading-relaxed font-medium">
                 Since 2009, we&apos;ve built software for companies of all types, from startups to Fortune 500 giants.
               </p>
@@ -671,14 +674,14 @@ export default function Header() {
                       <Link
                         key={ind.name}
                         href={ind.href}
-                        className="text-[13.5px] text-gray-600 hover:text-orange-600 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                        className="text-[13.5px] text-gray-600 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
                       >
                         <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                       </Link>
                     ))}
                   </div>
                   <div className="mt-8">
-                    <Link href="#" className="text-[13.5px] text-gray-900 font-bold hover:text-orange-600 inline-flex items-center gap-1.5 group/all">
+                    <Link href="#" className="text-[13.5px] text-gray-900 font-bold hover:text-gray-700 inline-flex items-center gap-1.5 group/all">
                       Our Story <span className="group-hover/all:translate-x-0.5 transition-transform duration-200 text-gray-400">→</span>
                     </Link>
                   </div>
@@ -695,7 +698,7 @@ export default function Header() {
                       <Link
                         key={ind.name}
                         href={ind.href}
-                        className="text-[13.5px] text-gray-600 hover:text-orange-600 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                        className="text-[13.5px] text-gray-600 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
                       >
                         <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                       </Link>
@@ -714,7 +717,7 @@ export default function Header() {
                       <Link
                         key={ind.name}
                         href={ind.href}
-                        className="text-[13.5px] text-gray-600 hover:text-orange-600 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
+                        className="text-[13.5px] text-gray-600 hover:text-gray-900 font-medium transition-all duration-150 flex items-center gap-2 group/item select-none cursor-pointer"
                       >
                         <span className="group-hover/item:translate-x-0.5 transition-transform duration-150">{ind.name}</span>
                       </Link>
@@ -763,7 +766,7 @@ export default function Header() {
                     }`}
                   >
                     <div>
-                      <span className="text-[11px] font-extrabold text-orange-600 tracking-wider uppercase block mb-2">Engagement Models</span>
+                      <span className="text-[11px] font-extrabold text-gray-500 tracking-wider uppercase block mb-2">Engagement Models</span>
                       <div className="flex flex-col space-y-2.5 pl-2">
                         {['Co-Development', 'Dedicated Teams', 'Product Engineering'].map((m) => (
                           <Link key={m} href="#" onClick={() => setIsOpen(false)} className="text-sm font-bold text-gray-800 hover:text-[#0078d4]">
@@ -774,7 +777,7 @@ export default function Header() {
                     </div>
 
                     <div>
-                      <span className="text-[11px] font-extrabold text-orange-600 tracking-wider uppercase block mb-2">Top Services</span>
+                      <span className="text-[11px] font-extrabold text-gray-500 tracking-wider uppercase block mb-2">Top Services</span>
                       <div className="flex flex-col space-y-2.5 pl-2">
                         {topServices.map((s) => (
                           <Link
@@ -808,7 +811,7 @@ export default function Header() {
                     </div>
 
                     <div>
-                      <span className="text-[11px] font-extrabold text-orange-600 tracking-wider uppercase block mb-2">Enterprise Focused</span>
+                      <span className="text-[11px] font-extrabold text-gray-500 tracking-wider uppercase block mb-2">Enterprise Focused</span>
                       <div className="flex flex-col space-y-2.5 pl-2">
                         {enterpriseServices.map((s) => (
                           <Link
@@ -837,11 +840,11 @@ export default function Header() {
                 <div key={item.label} className="w-full">
                   <button
                     onClick={() => setIsMobileIndustriesOpen(!isMobileIndustriesOpen)}
-                    className="w-full flex items-center justify-between text-gray-600 hover:text-orange-600 font-semibold transition-colors py-2 text-lg cursor-pointer"
+                    className="w-full flex items-center justify-between text-gray-600 hover:text-gray-900 font-semibold transition-colors py-2 text-lg cursor-pointer"
                   >
                     <span>{item.label}</span>
                     <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${isMobileIndustriesOpen ? 'rotate-180 text-orange-600' : ''}`}
+                      className={`w-4 h-4 transition-transform duration-200 ${isMobileIndustriesOpen ? 'rotate-180 text-gray-700' : ''}`}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2.5"
@@ -866,7 +869,7 @@ export default function Header() {
                             setIsMobileIndustriesOpen(false);
                             setIsOpen(false);
                           }}
-                          className={`text-sm flex items-center gap-1.5 ${ind.highlighted ? 'text-orange-600 font-semibold' : 'text-gray-500 font-medium'}`}
+                          className={`text-sm flex items-center gap-1.5 ${ind.highlighted ? 'text-gray-900 font-semibold' : 'text-gray-500 font-medium'}`}
                         >
                           {ind.highlighted && <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>}
                           {ind.name}
@@ -931,11 +934,15 @@ export default function Header() {
               </Link>
             );
           })}
-          <button className="w-full bg-[#0078d4] text-white py-3 rounded-lg hover:bg-[#005a9e] transition-all duration-200 font-semibold shadow-md shadow-blue-500/10 active:scale-[0.98] cursor-pointer">
+          <button 
+            onClick={() => { setIsModalOpen(true); setIsOpen(false); }}
+            className="w-full bg-[#0078d4] text-white py-2 text-sm rounded-lg hover:bg-[#005a9e] transition-all duration-200 font-semibold shadow-md shadow-blue-500/10 active:scale-[0.98] cursor-pointer">
             Schedule a Call
           </button>
         </div>
       </div>
     </header>
+    <ScheduleCallModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

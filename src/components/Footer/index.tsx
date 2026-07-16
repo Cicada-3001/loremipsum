@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import ScheduleCallModal from '@/components/ScheduleCallModal';
 
 const discoverLinks = [
   { label: 'About Us', href: '#' },
@@ -37,8 +38,10 @@ const careerLinks = [
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [agreed, setAgreed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
+    <>
     <footer className="font-sans">
 
       {/* ── Top Dark CTA Banner ── */}
@@ -70,7 +73,6 @@ export default function Footer() {
                     <rect x="0" y="0" width="10.5" height="10.5" fill="#f25022" />
                     <rect x="12" y="0" width="10.5" height="10.5" fill="#7fba00" />
                     <rect x="0" y="12" width="10.5" height="10.5" fill="#00a4ef" />
-                    <rect x="12" y="12" width="10.5" height="10.5" fill="#ffb900" />
                   </svg>
                 </div>
                 <span className="text-[17px] font-semibold text-gray-900 tracking-tight select-none">
@@ -165,10 +167,12 @@ export default function Footer() {
               Get in touch<span className="text-gray-400">.</span>
             </h4>
             <div className="flex items-center gap-3 mb-4">
-              <button className="flex-1 py-2.5 px-4 border border-gray-300 bg-white rounded-lg text-[13px] font-bold text-gray-800 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <button className="flex-1 py-2 px-3 border border-gray-300 bg-white rounded-lg text-xs font-bold text-gray-800 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
                 Contact Us
               </button>
-              <button className="flex-1 py-2.5 px-4 bg-orange-500 text-white rounded-lg text-[13px] font-bold hover:bg-orange-600 transition-colors duration-200 cursor-pointer flex items-center justify-center gap-1.5">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="flex-1 py-2 px-3 bg-orange-500 text-white rounded-lg text-xs font-bold hover:bg-orange-600 transition-colors duration-200 cursor-pointer flex items-center justify-center gap-1.5">
                 Schedule a Call <span>→</span>
               </button>
             </div>
@@ -176,7 +180,19 @@ export default function Footer() {
               <svg className="w-4 h-4 text-gray-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.59A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
               </svg>
-              +1 (408) 478-2739
+              +254 734 822 822
+            </div>
+            <div className="flex items-center gap-2 text-[13px] text-gray-600 font-medium mt-2">
+              <svg className="w-4 h-4 text-gray-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:info@allrentals.tech" className="hover:text-[#0078d4] transition-colors">info@allrentals.tech</a>
+            </div>
+            <div className="flex items-center gap-2 text-[13px] text-gray-600 font-medium mt-1">
+              <svg className="w-4 h-4 text-gray-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:support@allrentals.tech" className="hover:text-[#0078d4] transition-colors">support@allrentals.tech</a>
             </div>
           </div>
 
@@ -261,5 +277,7 @@ export default function Footer() {
       </div>
 
     </footer>
+    <ScheduleCallModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

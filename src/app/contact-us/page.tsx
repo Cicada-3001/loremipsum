@@ -23,9 +23,12 @@ export default function ContactUsPage() {
             <div className="flex flex-col space-y-4">
               <h2 className="text-2xl font-bold text-gray-950">Contact Details</h2>
               <p className="text-gray-600">
-                <strong>Email:</strong> <Link href="mailto:info@kompasit.com" className="text-[#0078d4] hover:underline">info@kompasit.com</Link>
+                <strong>Email:</strong> <Link href="mailto:info@allrentals.tech" className="text-[#0078d4] hover:underline">info@allrentals.tech</Link>
               </p>
-              <p className="text-gray-600"><strong>Phone:</strong> +1 (555) 123‑4567</p>
+              <p className="text-gray-600">
+                <strong>Support:</strong> <Link href="mailto:support@allrentals.tech" className="text-[#0078d4] hover:underline">support@allrentals.tech</Link>
+              </p>
+              <p className="text-gray-600"><strong>Phone:</strong> +254 734 822 822</p>
               <p className="text-gray-600"><strong>Address:</strong> 123 Innovation Way, Nairobi, Kenya</p>
             </div>
             {/* Form */}
