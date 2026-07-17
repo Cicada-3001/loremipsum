@@ -347,7 +347,7 @@ export default function AfricanPresence() {
             </div>
 
             {/* Main Interactive Details Dashboard Card */}
-            <div className={`bg-white rounded-3xl p-8 border ${activeCountry.borderColor} transition-all duration-500 transform scale-100`}>
+            <div className={`bg-white rounded-3xl p-8 transition-all duration-500 transform scale-100`}>
               
               <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-5">
                 <div className="flex items-center space-x-3">
