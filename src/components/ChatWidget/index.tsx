@@ -98,7 +98,7 @@ export default function ChatWidget() {
     } catch (error) {
       setMessages(prev => {
         const newMsgs = [...prev];
-        newMsgs[newMsgs.length - 1].content = 'Sorry, I am having trouble connecting to the server right now. Please make sure the Python backend is running.';
+        newMsgs[newMsgs.length - 1].content = 'Sorry, I am having trouble connecting to the server right now.';
         return newMsgs;
       });
       setIsTyping(false);
