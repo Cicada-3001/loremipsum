@@ -186,13 +186,13 @@ export default function Footer() {
               <svg className="w-4 h-4 text-gray-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
               </svg>
-              <a href="mailto:info@allrentals.tech" className="hover:text-[#0078d4] transition-colors">info@allrentals.tech</a>
+              <a href="mailto:info@kompasit.tech" className="hover:text-[#0078d4] transition-colors">info@kompasit.tech</a>
             </div>
             <div className="flex items-center gap-2 text-[13px] text-gray-600 font-medium mt-1">
               <svg className="w-4 h-4 text-gray-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
               </svg>
-              <a href="mailto:support@allrentals.tech" className="hover:text-[#0078d4] transition-colors">support@allrentals.tech</a>
+              <a href="mailto:support@kompasit.tech" className="hover:text-[#0078d4] transition-colors">support@kompasit.tech</a>
             </div>
           </div>
 

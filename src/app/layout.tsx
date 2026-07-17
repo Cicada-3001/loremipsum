@@ -5,6 +5,7 @@ import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SplashScreen from '@/components/SplashScreen';
+import ChatWidget from '@/components/ChatWidget';
 
 const outfit = Outfit({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800', '900'], variable: '--font-outfit' });
 
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );
